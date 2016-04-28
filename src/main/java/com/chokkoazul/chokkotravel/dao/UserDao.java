@@ -8,5 +8,10 @@ public interface UserDao {
 
 	public List<User> getAll();
 	
+	public User getUserById(Integer idUser);
+	
+	public void insertUser(User user);
+	
+	
 	
 }

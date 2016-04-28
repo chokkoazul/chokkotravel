@@ -21,4 +21,15 @@ public class UserServiceImpl implements UserService {
 		return userDao.getAll();
 	}
 
+	public void insertUser(User user) {
+		userDao.insertUser(user);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public User getUserById(Integer idUser) {
+		// TODO Auto-generated method stub
+		return userDao.getUserById(idUser);
+	}
+
 }
