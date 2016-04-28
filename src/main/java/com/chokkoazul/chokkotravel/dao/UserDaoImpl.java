@@ -21,4 +21,16 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
+	public void insertUser(User user) {
+		em.persist(user);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public User getUserById(Integer idUser) {
+		// TODO Auto-generated method stub
+		User userOut =  em.find(User.class, idUser);
+		return userOut;
+	}
+
 }
