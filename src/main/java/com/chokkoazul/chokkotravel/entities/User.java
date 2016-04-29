@@ -1,12 +1,17 @@
 package com.chokkoazul.chokkotravel.entities;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -16,9 +21,10 @@ import javax.persistence.Table;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQUENCE1")
-	@SequenceGenerator(name="SEQUENCE1", sequenceName="SEQUENCE1", allocationSize=1)
-    @Column(name = "id_user")
+	//@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQUENCE1")
+	//@SequenceGenerator(name="SEQUENCE1", sequenceName="SEQUENCE1", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_user")
 	private Integer idUser;
 	
 	@Column(name = "user")
@@ -30,6 +36,11 @@ public class User {
 	@Column(name = "name")
 	private String name;
 	
+	/*
+	@OneToMany(cascade= CascadeType.ALL)
+	@JoinColumn(name="id_travel")
+	private List<Travel> travels;
+	*/
 	public User(){
 		
 	}
@@ -40,6 +51,16 @@ public class User {
 		this.pass=pass;
 		this.name=name;
 	}
+
+	
+	
+	/*public List<Travel> getTravels() {
+		return travels;
+	}
+
+	public void setTravels(List<Travel> travels) {
+		this.travels = travels;
+	}*/
 
 	public Integer getIdUser() {
 		return idUser;

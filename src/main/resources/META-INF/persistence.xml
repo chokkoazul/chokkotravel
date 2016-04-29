@@ -5,6 +5,7 @@
 	<persistence-unit name="UserPU" transaction-type="JTA">
 		<jta-data-source>jdbc/TravelDb</jta-data-source>
 		<class>com.chokkoazul.chokkotravel.entities.User</class>
+		<class>com.chokkoazul.chokkotravel.entities.Travel</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		</properties>
