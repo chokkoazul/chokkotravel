@@ -1,5 +1,6 @@
 package com.chokkoazul.chokkotravel.entities;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,14 +12,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries( { @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u ORDER BY u.idUser"),@NamedQuery(name = "User.findUserPass", query = "select u from User u where u.user = ?1 and u.pass = ?2") })
+@NamedQueries( { @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u ORDER BY u.idUser") })
 @Table(name="user")
 public class User {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQUENCE1")
 	@SequenceGenerator(name="SEQUENCE1", sequenceName="SEQUENCE1", allocationSize=1)
-    @Column(name = "id_user")
+	@Column(name = "id_user")
 	private Integer idUser;
 	
 	@Column(name = "user")
@@ -30,6 +31,7 @@ public class User {
 	@Column(name = "name")
 	private String name;
 	
+
 	public User(){
 		
 	}
@@ -40,8 +42,8 @@ public class User {
 		this.pass=pass;
 		this.name=name;
 	}
-	
-		public Integer getIdUser() {
+
+	public Integer getIdUser() {
 		return idUser;
 	}
 
@@ -72,5 +74,9 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	
+	
+	
 	
 }

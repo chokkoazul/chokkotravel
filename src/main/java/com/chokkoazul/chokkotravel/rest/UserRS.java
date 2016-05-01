@@ -54,7 +54,6 @@ public class UserRS {
     @Consumes("application/json")
     public void insertaNombre(User user) throws JsonProcessingException {
     	userDao.insertUser(user);
-    	//prueba
     }
 	
 }
