@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserById(idUser);
 	}
 
+	public User getUserByUserAndPass(String user,String pass) {
+		// TODO Auto-generated method stub
+		return userDao.getUserByUserAndPass(user,pass);
+	}
+
 }

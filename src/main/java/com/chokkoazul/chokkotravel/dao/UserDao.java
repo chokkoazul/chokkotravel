@@ -10,6 +10,8 @@ public interface UserDao {
 	
 	public User getUserById(Integer idUser);
 	
+	public User getUserByUserAndPass(String user,String pass);
+	
 	public void insertUser(User user);
 	
 	
