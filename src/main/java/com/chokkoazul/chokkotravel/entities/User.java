@@ -12,7 +12,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries( { @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u ORDER BY u.idUser") })
+@NamedQueries( { @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u ORDER BY u.idUser"),
+			     @NamedQuery(name = "User.findUserPass", query = "SELECT u FROM User u where u.user = ?1 and u.pass = ?2")})
+
 @Table(name="user")
 public class User {
 
